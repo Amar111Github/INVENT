@@ -3,7 +3,6 @@ import {user} from "./data";
 import "./App.css"
 import { useNavigate } from 'react-router-dom';
 
-
 const User = () => {
     let navigate = useNavigate();
     let [name,setName] = useState("");
@@ -13,7 +12,9 @@ const User = () => {
     const addHandler = (e)=>{
        e.preventDefault();
        user.push({name,phoneNo, email, password});
-        navigate("/");   
+        navigate("/");
+        
+        
     }
     console.log(user);
   return (

@@ -27,7 +27,7 @@ const ManageInvoice = () => {
     const doc = new jsPDF();
     const allPurchase = async () => {
         try {
-            const response = await axios.get(`${base_Url}/invoice/allInvoices`);
+            const response = await axios.get(`http://localhost:8000/invoice/allInvoices`);
        if(response.data.result.length>0){
         setViewData(response.data.result[0].arr)
         setData(response.data.result[0].arr);
@@ -44,7 +44,7 @@ const ManageInvoice = () => {
     
 console.log(data)
     const deleteHandler = async (id) => {
-        await axios.delete(`${base_Url}/invoice/remove_invoice_details/${id}`).then((res) => {
+        await axios.delete(`http://localhost:8000/invoice/remove_invoice_details/${id}`).then((res) => {
             console.log(res.data);
             alert("deleted")
             allPurchase();

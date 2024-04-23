@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "../component/suplierForm.css";
 import { IoCloseOutline } from "react-icons/io5";
 
-import { base_Url } from './api';
+import { base_Url } from '../pages/api';
 import axios from 'axios';
 
 
@@ -23,7 +23,7 @@ const Hsn = ({ setFormToggle,allHsn, editData, setEditData}) => {
             try {
          
               
-                const response = await axios.patch(`${base_Url}/hsn/update_hsn/${editData._id}`, data);
+                const response = await axios.patch(`http://localhost:8000/hsn/update_hsn/${editData._id}`, data);
                 console.log(response);
                 setFormToggle(false);
                 setData({
@@ -42,7 +42,7 @@ const Hsn = ({ setFormToggle,allHsn, editData, setEditData}) => {
             try {
             
            
-                const response = await axios.post(`${base_Url}/hsn/create_hsn`, data);
+                const response = await axios.post(`http://localhost:8000/hsn/create_hsn`, data);
                 console.log(response);
                 
                 setFormToggle(false);

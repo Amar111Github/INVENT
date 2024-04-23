@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "../component/suplierForm.css";
 import { IoCloseOutline } from "react-icons/io5";
 
-import { base_Url } from './api';
+import { base_Url } from '../pages/api';
 import axios from 'axios';
 
 
@@ -24,7 +24,7 @@ const CategoryForm = ({ setFormToggle,allCategory, editData, setEditData}) => {
             try {
          
               
-                const response = await axios.patch(`${base_Url}/category/update_catdelete_categoryegory/${editData._id}`, data);
+                const response = await axios.patch(`http://localhost:8000/category/update_catdelete_categoryegory/${editData._id}`, data);
                 console.log(response);
                 setFormToggle(false);
                 setData({
@@ -43,7 +43,7 @@ const CategoryForm = ({ setFormToggle,allCategory, editData, setEditData}) => {
             try {
             
            
-                const response = await axios.post(`${base_Url}/category/create_category`, data);
+                const response = await axios.post(`http://localhost:8000/category/create_category`, data);
                 console.log(response);
                 
                 setFormToggle(false);
