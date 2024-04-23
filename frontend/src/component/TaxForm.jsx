@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import "../component/suplierForm.css";
+import "./suplierForm.css";
 import { IoCloseOutline } from "react-icons/io5";
 
 import { base_Url } from '../pages/api';

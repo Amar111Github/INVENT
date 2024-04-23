@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "../component/suplierForm.css";
 import { IoCloseOutline } from "react-icons/io5";
 
-import { base_Url } from '../pages/api';
+import { base_Url } from './api';
 import axios from 'axios';
 
 

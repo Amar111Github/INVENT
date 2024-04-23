@@ -3,9 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const path = require("path");
 
 const app = express();
 require('dotenv').config()
+app.use(express.json());
 
 app.use(bodyParser.json({ extended : true, limit : '5mb' }))
 app.use(bodyParser.urlencoded({ extended : true, limit : '5mb' }))
@@ -35,7 +37,6 @@ mongoose.connect(process.env.DB_URL).then(() => {
 }).catch(() => {
     console.log('database in faild');
 })
-
 app.use('/user', employer)
 app.use('/supplier', supplier)
 
@@ -48,34 +49,21 @@ app.use('/invoice', invoice)
 app.use('/hsn', hsn)
 app.use('/noOfUnit', noOfUnit)
 app.use("/tax", tax)
-// create a server 
+
 const Port = process.env.Port;
 
-// const mainpage = async (req, res) => {
+app.use(express.json());
+const _dirname=path.dirname("")
+const buildpath=path.join(_dirname,"../frontend/build")
+app.use(express.static(buildpath));
+app.use(
+  cors({
+    "origin":"*",
+  })
+);
 
-//     try{
-//         const sale = await inVoiceDetailsModule.find({});
-//         console.log("sale", sale)
-//         // const product = await productModule.find({});
-//         // console.log("product", product)
-//         // const customer = await customerModule.find({});
-//         // console.log("customer", customer)
-//         // const supplier = await supplierModule.find({});
-//         // console.log("supplier", supplier)
-//         res.status(200).json({
-//             message : "response Received",
-//             // sales : sale.length,
-//             // products: product.length,
-//             // customers:customer.length,
-//             // suppliers: supplier.length
 
-//         })
-//     } catch {
-//         res.status(500).json({
-//             message : "product details requist is faild"
-//         })
-//     }
-// }
+
 app.get('/mainpage', async (req, res) => {
     try {
       const sale = await inVoiceDetailsModule.find({});
