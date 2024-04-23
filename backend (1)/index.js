@@ -52,26 +52,21 @@ app.use("/tax", tax)
 
 const Port = process.env.Port;
 
-// app.use(express.json());
-// const _dirname=path.dirname("")
-// const buildpath= path.join(_dirname,"../frontend/build")
-// app.use(express.static(buildpath));
-// app.use(
-//   cors({
-//     "origin":"*",
+app.use(express.json());
+const _dirname=path.dirname("")
+const buildpath= path.join(_dirname,"../frontend/build")
+app.use(express.static(buildpath));
+app.use(
+  cors({
+    "origin":"*",
 
-//   })
-// );
+  })
+);
 
-app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "frontend", "build")));
-  res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-  });
-
-
-
-
-
+// app.get("/", (req, res) => {
+//   app.use(express.static(path.resolve(__dirname, "frontend", "build")));
+//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+//   });
 
 
 
