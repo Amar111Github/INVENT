@@ -28,7 +28,7 @@ const ManagePurchase = () => {
     const doc = new jsPDF();
     const allPurchase = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/product_details/allpurchase`);
+            const response = await axios.get("http://localhost:8000/product_details/allpurchase");
             console.log(response.data.result)
             setData(response.data.result[0].arr || []);
             setViewData(response.data.result[0].arr  || [])

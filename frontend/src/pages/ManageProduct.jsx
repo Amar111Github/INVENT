@@ -21,7 +21,7 @@ const ManageProduct = () => {
     const doc = new jsPDF()
     const allProduct = async () => {
         try {
-            const response = await axios.post(`http://localhost:8000/product/all_product`);
+            const response = await axios.post("http://localhost:8000/product/all_product");
             console.log(response.data.result)
             setData(response.data.result);
             setViewData(response.data.result)

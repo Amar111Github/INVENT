@@ -24,7 +24,7 @@ const PaidInvoices = () => {
     const [viewPurchase, setViewPurchase] = useState(null);
     const allPurchase = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/invoice/allInvoices`);
+            const response = await axios.get("http://localhost:8000/invoice/allInvoices");
             if(response.data.result.length>0){
           let filterData =   response.data.result[0].arr.filter((val,i)=>{
                 return val.paidStatus !== "partiallyPaid" && val.paidStatus!=="unpaid" 

@@ -21,8 +21,8 @@ const ApprovalInvoice = () => {
     const doc = new jsPDF({ orientation: 'landscape' });
     const allPurchase = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/invoice/allInvoices`);
-          
+            const response = await axios.get("http://localhost:8000/invoice/allInvoices");
+            
             if(response.data.result.length>0){
                 setData(response.data.result[0].arr.filter((val)=>{
                     return(val.status==="Pending")
@@ -55,7 +55,7 @@ const ApprovalInvoice = () => {
    
     const allUnits = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/noOfUnit/noOfUnit`);
+            const response = await axios.get("http://localhost:8000/noOfUnit/noOfUnit");
             
       
             const transformedObject = getTotalQuantities(response.data.data);

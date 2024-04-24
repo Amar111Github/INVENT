@@ -32,7 +32,7 @@ const CustomerForm = ({ setFormToggle, allClient, editData, setEditData }) => {
             formData.append('customer_address', data.customer_address);
             formData.append('image', image); // Append the image directly
             console.log(image)
-            const response = await axios.post(`http://localhost:8000/client/add_customer`, formData, {
+            const response = await axios.post("http://localhost:8000/client/add_customer", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

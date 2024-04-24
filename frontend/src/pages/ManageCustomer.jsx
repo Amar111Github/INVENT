@@ -23,7 +23,7 @@ const ManageCustomer = () => {
 
     const allClient = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/client/allCustomer`);
+            const response = await axios.get("http://localhost:8000/client/allCustomer");
             setViewData(response.data.result)
             setData(response.data.result);
         } catch (error) {

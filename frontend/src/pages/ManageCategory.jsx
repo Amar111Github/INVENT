@@ -21,7 +21,7 @@ const ManageCategory = () => {
     const [editData, setEditData] = useState("");
     const allCategory = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/category/findall_category`);
+            const response = await axios.get("http://localhost:8000/category/findall_category");
             setData(response.data.data);
             setViewData(response.data.data)
         } catch (error) {

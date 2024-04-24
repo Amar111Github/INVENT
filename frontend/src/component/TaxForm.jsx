@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import "./suplierForm.css";
+import "../component/suplierForm.css";
 import { IoCloseOutline } from "react-icons/io5";
 
 import { base_Url } from '../pages/api';
@@ -40,7 +40,7 @@ const TaxForm = ({ setFormToggle,allTax, editData, setEditData}) => {
         try {
         
        
-            const response = await axios.post(`http://localhost:8000/tax/create_tax`, data);
+            const response = await axios.post("http://localhost:8000/tax/create_tax", data);
             console.log(response);
             
             setFormToggle(false);

@@ -20,7 +20,7 @@ const ManageSuplier = () => {
     const [editData, setEditData] = useState("");
     const allSupplier = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/supplier/find_supplire`);
+            const response = await axios.get("http://localhost:8000/supplier/find_supplire");
             setData(response.data.product);
             setViewData(response.data.product)
         } catch (error) {

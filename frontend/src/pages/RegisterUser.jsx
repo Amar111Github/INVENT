@@ -16,7 +16,7 @@ const RegisterUser = () => {
 
   const userVerifyHandler = async () => {
     try {
-      const response = await axios.post(`http://localhost:8000/user/create_user`, data);
+      const response = await axios.post("http://localhost:8000/user/create_user", data);
       console.log(response.data); 
       navigate("/home");
     } catch (error) {
