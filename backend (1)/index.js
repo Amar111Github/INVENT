@@ -56,8 +56,10 @@ app.use("/tax", tax);
 
 // CORS for frontend static files
 app.use(cors({
-    origin: '*',
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
 }));
+
 
 const Port = process.env.PORT || 8000;
 
